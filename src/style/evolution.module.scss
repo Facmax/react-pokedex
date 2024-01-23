@@ -1,0 +1,22 @@
+.evolutionBlock{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 0 40px 0 40px;
+}
+
+.evolutionImg{
+    width: 40%;
+}
+
+.evolutionName{
+    text-align: center;
+    font-weight: bold;
+}
+
+.evolutionId{
+   text-align: center;
+   font-size: 12px;
+   font-style: italic;
+   color: rgb(123, 123, 123);
+}

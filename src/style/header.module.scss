@@ -1,0 +1,80 @@
+header{
+    height: 60px;
+    width: 100%;
+    background-color: rgb(48, 48, 48);
+    position: relative
+}
+
+h1{
+    color: white;
+    padding:10px;
+}
+
+.contactDesktop{
+    color: white;
+    margin-left: auto;
+    margin-right: 10px;
+    display: flex;
+}
+
+.contactMobile{
+    display: none;
+}
+
+.contactCircle{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin: 0 10px 0 10px; 
+    border: 1px solid white;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.ulMenu{
+    position: absolute;
+    top: 60px;
+    left: 0;
+    list-style: none;
+    color: white;
+    width: 100%;
+    z-index: 2;
+    background-color: rgb(100, 100, 100);
+    li{
+        padding: 10px;
+        border-top: 1px solid white;
+        border-bottom: 1px solid white;
+    }
+}
+
+
+@media only screen and (max-width : 991px) {
+    h1{
+        font-size: 25px; 
+    }
+
+    .contactDesktop{
+        display: none;
+    }
+
+    .contactMobile{
+        display: block;
+        width: 40px;
+        height: 40px;
+        border: 2px solid white;
+        background-color: white;
+        animation: rotation 40s linear infinite;
+        border-radius: 50%;
+        margin-left: auto;
+        margin-right: 10px;
+    }
+}
+
+@keyframes rotation {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}

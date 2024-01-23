@@ -1,0 +1,31 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+.vertical_align{
+    display: flex;
+    align-items: center;
+}
+
+img{
+    max-width: 100%;
+}
+
+.bold{
+    font-weight: bold;
+}
+
+.tabsBorderGray{
+    border-bottom: 2px solid rgb(212, 212, 212);
+}
+
+.block{
+    display: block;
+}
+
+.none{
+    display: none;
+}

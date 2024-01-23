@@ -1,0 +1,25 @@
+main{
+    width: 100%;
+    background-color: #f6f5ff;
+}
+
+.container{
+    width: 80%;
+    min-height: 100vh;
+    margin: auto;
+    background-color: white;
+}
+
+
+.cardsFlex{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+@media only screen and (max-width : 991px) {
+
+    .container{
+        width: 100%;
+    }
+}

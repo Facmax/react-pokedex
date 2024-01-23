@@ -1,0 +1,81 @@
+.statsBox{
+    width: 100%;
+}
+
+.ulStats{
+    margin: 0 40px 0 40px;
+}
+
+.statsInfos{
+    display: flex;
+    justify-content: space-around;
+}
+
+.statName{
+    width: 20%;
+    font-weight: bold;
+}
+
+.statLine{
+    width: 50%;
+    height: 1px;
+    margin: auto;
+    background-color: rgb(176, 176, 176);
+}
+.statValue{
+    width: 20%;
+    padding: 10px 20px 10px 20px;
+    text-align: end;
+}
+
+.flavor{
+    margin: 20px 40px 0 40px;
+    padding: 10px;
+    font-size: 13px;
+    color: white
+}
+
+.statsTitle{
+    margin: 10px 0 20px 40px;
+}
+
+.measure{
+    display: flex;
+    justify-content: space-between;
+    margin: 40px 40px 0 40px;
+}
+
+.measureText{
+    font-size: 12px;
+    display: flex;
+    h4{
+        margin-right: 5px;
+    }
+}
+
+@media only screen and (max-height : 799px) {
+    .statsInfos{
+        font-size: 12px;
+    }
+
+    .flavor{
+        font-size: 12px;
+    }
+}
+
+@media only screen and (max-width : 280px) {
+    .statsInfos{
+        font-size: 10px;
+    }
+
+    .flavor{
+        font-size: 10px;
+    }
+}
+
+@media only screen and (max-height : 600px){
+
+    .statValue{
+        padding: 5px 20px 5px 20px;
+    }
+}

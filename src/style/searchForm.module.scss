@@ -1,0 +1,66 @@
+.searchBar{
+    width: 100%;
+    padding-top: 50px;
+    margin-bottom: 20px;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.nameBox{
+    height: 50%;
+    width: 200px;
+    height: 50px;
+    position: relative;
+    border: 1px solid rgb(199, 199, 199);
+}
+
+.typeBox{
+    height: 50%;
+    width: 200px;
+    height: 50px;
+    position: relative;
+    border: 1px solid rgb(199, 199, 199); 
+}
+
+.label{
+    position: absolute;
+    top: -20%;
+    left: 5%;
+    padding: 0 10px 0 10px;
+    color: rgb(199, 199, 199);
+    background-color: white;
+}
+
+input{
+    margin: auto;
+    border: none;
+    &:focus{
+        outline: none;
+    }
+    &::placeholder{
+        color: rgb(199, 199, 199);
+    }
+}
+
+select{
+    margin: auto;
+    width: 50%;
+    border: none;
+    color: rgb(199, 199, 199);
+}
+
+@media only screen and (max-width : 991px) {
+
+    .searchBar{
+        padding-top: 20px;
+    }
+
+    .nameBox{
+        margin: 20px;
+    }
+
+    .typeBox{
+        margin: 20px;
+
+    }
+}
