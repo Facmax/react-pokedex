@@ -42,7 +42,6 @@ function Modal({openModal, statusModal}) {
     }
   }
   const success = statusModal === FETCH_STATUS.SUCCESS;
-
     return (
       <>
       {success ?
@@ -90,7 +89,7 @@ function Modal({openModal, statusModal}) {
       </div>
       :
       <div className={`${styles.background} vertical_align`}>
-        <div className={`${styles.card} ${pokemonModal.types[0].type.name}shadow`}>
+        <div className={styles.card}>
           <div className={styles.modalClose} onClick={()=> openModal(false)}>X</div>
           <Loading />
         </div>
