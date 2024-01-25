@@ -1,5 +1,5 @@
-import styles from '../style/loading.module.scss';
 import pokeballLoading from '../img/pokeballLoading.png';
+import styles from '../style/loading.module.scss';
 
 function Loading() {
     return (

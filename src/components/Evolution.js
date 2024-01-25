@@ -1,14 +1,20 @@
-import styles from '../style/evolution.module.scss';
-import Loading from './Loading'
-import { capitalizeLetter, addHashTag } from '../utils/utils';
+import { useContext } from 'react';
+import { MyContext } from '../context/MyContext';
 
-function Evolution({evolution, status, id}) {
+import Loading from './Loading'
+
+import styles from '../style/evolution.module.scss';
+
+function Evolution({evolution, status}) {
+
+  const {getPokemonID, addHashTag, capitalizeLetter} = useContext(MyContext);
+
   if(status === "success"){
     let firstEvolution = false;
     let secondEvolution = false;
     let thirdEvolution = false;
 
-    let id_1 = id(evolution.chain.species.url);
+    let id_1 = getPokemonID(evolution.chain.species.url);
     let id_2 = null;
     let id_3 = null;
 
@@ -18,14 +24,14 @@ function Evolution({evolution, status, id}) {
 
     let a = evolution.chain.evolves_to.length;
     if(a !== 0){
-      id_2 = id(evolution.chain.evolves_to[0].species.url);
+      id_2 = getPokemonID(evolution.chain.evolves_to[0].species.url);
       if(parseInt(id_2) < 152){
         secondEvolution = true;
       }
 
     let b = evolution.chain.evolves_to[0].evolves_to.length;
       if(b !== 0){
-        id_3 = id(evolution.chain.evolves_to[0].evolves_to[0].species.url);
+        id_3 = getPokemonID(evolution.chain.evolves_to[0].evolves_to[0].species.url);
         if(parseInt(id_3) < 152){
           thirdEvolution = true
         }
@@ -73,9 +79,9 @@ function Evolution({evolution, status, id}) {
     )
   }else{
     return(
-      <>
+      <div className={styles.evolutionBlock}>
         <Loading />
-      </>
+      </div>
     )
   }
 }

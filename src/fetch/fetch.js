@@ -1,4 +1,8 @@
+import { useContext } from 'react';
+import { MyContext } from '../context/MyContext';
+
 import { FETCH_STATUS } from './fetchStatus';
+
 
 export const fetchPokemonsFirstTime = async (setPokemons, setFullListPokemons, setStatus) => {
     try{
@@ -42,7 +46,9 @@ export const selectTypePokemon = async(e, setStatus, setPokemons, fullListPokemo
 }
 
 export const ClickModal = async (setStatusModal, item, setPokemonModal, setOpenModal, setFlavorText) => {
+
   try{
+    setOpenModal(true); 
     setStatusModal(FETCH_STATUS.LOADING);
     const response = await fetch(item.url);
 
@@ -55,7 +61,6 @@ export const ClickModal = async (setStatusModal, item, setPokemonModal, setOpenM
           setStatusModal(FETCH_STATUS.SUCCESS);
         }
       setPokemonModal(data);
-      setOpenModal(true); 
     }
   }catch(err){
     console.log(err);

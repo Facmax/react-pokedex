@@ -12,7 +12,6 @@
     width: 450px;
     height: 800px;
     background-color: rgb(229, 229, 229);
-    box-shadow: 2.5px 2.5px 10px rgb(135, 135, 135);
     margin: auto;
     overflow: hidden;
 }
@@ -104,7 +103,7 @@
     z-index: 2;
 }
 
-.cardInfosPartData{
+.cardInfosPartDataFlex{
     width: 100%;
     height: 52.5%;
     margin-left: 40px;
@@ -113,6 +112,10 @@
     height: 62.5%;
     display: flex;
     align-items: center;
+}
+
+.cardInfosPartData{
+    width: 100%;
 }
 
 @media only screen and (max-width : 389px){
@@ -142,7 +145,7 @@
 }
 
 @media only screen and (max-height : 800px){
-    .cardInfosPartData{
+    .cardInfosPartDataFlex{
         display: block;
         align-items:normal;
     }

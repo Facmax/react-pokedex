@@ -1,7 +1,7 @@
-import styles from '../style/header.module.scss';
 import pokeball_menu from '../img/pokeballLoading.png';
 import gitHub from '../img/github.png';
-import linkedIn from '../img/linkedin-in.png'
+import linkedIn from '../img/linkedin-in.png';
+import styles from '../style/header.module.scss';
 
 function Header() {
 
@@ -25,7 +25,9 @@ function Header() {
           </div>
           <div className={styles.contactDesktop}>
             <div className={`${styles.contactCircle} vertical_align`}>
-              <img src={gitHub} alt="github icon" />
+              <a href="https://github.com/Facmax/react-pokedex" target="_blank" rel="noreferrer">
+                <img src={gitHub} alt="github icon" />
+              </a>
             </div>
             <div className={`${styles.contactCircle} vertical_align`}>
               <img src={linkedIn} alt="linked icon" />
@@ -35,7 +37,11 @@ function Header() {
             <img src={pokeball_menu} alt="burger menu icon" />
           </div>
           <ul id="ulMenu" className={`${styles.ulMenu} none`}>
-            <li>GitHub</li>
+            <li>
+              <a href="https://github.com/Facmax/react-pokedex" target="_blank" rel="noreferrer">
+                GitHub
+              </a>
+            </li>
             <li>LinkedIn</li>
           </ul>
         </header>

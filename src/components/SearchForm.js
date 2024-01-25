@@ -1,5 +1,6 @@
+import { selectTypePokemon } from '../fetch/fetch';
+
 import styles from '../style/searchForm.module.scss';
-import {selectTypePokemon} from '../fetch/fetch';
 
 function SearchForm({search, setSearch, setStatus, setPokemons, fullListPokemons}) {
     return (
@@ -7,7 +8,7 @@ function SearchForm({search, setSearch, setStatus, setPokemons, fullListPokemons
                 <div className={`${styles.searchBar} vertical_align`}>
                     <div className={`${styles.nameBox} vertical_align`}>
                         <span className={styles.label}>Name</span>
-                        <input placeholder="Type to search..." value={search} onClick={(e) => e.target.placeholder=""} onChange={e => setSearch(e.target.value)} /> 
+                        <input placeholder="Type to search..." value={search} onClick={(e) => e.target.placeholder=""} onChange={e => setSearch(e.target.value.toLowerCase())} /> 
                     </div>
                     <div className={`${styles.typeBox} vertical_align`}>
                         <span className={styles.label}>Type</span>

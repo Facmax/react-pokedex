@@ -1,11 +1,13 @@
-import styles from '../style/main.module.scss';
-import {fetchPokemonsFirstTime} from '../fetch/fetch';
+import { useEffect, useState } from 'react';
+
+import { fetchPokemonsFirstTime } from '../fetch/fetch';
 import { FETCH_STATUS } from '../fetch/fetchStatus';
+
 import PokemonsList from './PokemonsList';
 import Loading from './Loading';
 import SearchForm from './SearchForm';
 
-import { useEffect, useState } from 'react';
+import styles from '../style/main.module.scss';
 
 function Main() {
 
@@ -23,6 +25,7 @@ function Main() {
   },[search]);
 
   const searchPokemon = () => {
+    console.log(search)
     const filter = fullListPokemons.filter((item) => { 
       return search.toLowerCase() === ""
       ? item

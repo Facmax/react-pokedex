@@ -1,28 +1,26 @@
-import styles from '../style/pokemonsList.module.scss';
-import pokeball_background from '../img/pokeball_background.png';
+import { useState, useContext } from 'react';
+import { MyContext } from '../context/MyContext';
+
 import { FETCH_STATUS } from '../fetch/fetchStatus';
-import { capitalizeLetter, addHashTag } from '../utils/utils';
 import { ClickModal } from '../fetch/fetch';
-import { useState } from 'react';
+
 import Modal from './Modal';
+
+
+import pokeball_background from '../img/pokeball_background.png';
+import styles from '../style/pokemonsList.module.scss';
 
 function PokemonsList({pokemons}) {
 
+    const {setPokemonModal, setFlavorText, getPokemonID, addHashTag, capitalizeLetter} = useContext(MyContext);
     const [statusModal, setStatusModal] = useState(FETCH_STATUS.IDLE)
-    const [pokemonModal, setPokemonModal] = useState(null);
     const [openModal, setOpenModal] = useState(false);
-    const [flavorText, setFlavorText] = useState(null);
 
     openModal?document.body.style.overflow="hidden" : document.body.style.overflow=""
 
-    const getPokemonID = (url) => {
-        const pokemonID = url.split("/")[6];
-        return(pokemonID);  
-    }
-
     return (
         <>
-            {openModal ? <Modal pokemonInfos={pokemonModal} openModal={setOpenModal} id={getPokemonID} flavor={flavorText} /> : ""}
+            {openModal ? <Modal openModal={setOpenModal} statusModal={statusModal} /> : ""}
             {pokemons.map((item) => (
                 <div className={styles.card} key={getPokemonID(item.url)} onClick={()=>ClickModal(setStatusModal, item, setPokemonModal, setOpenModal, setFlavorText)}>
                     <div className={styles.img_background}>
