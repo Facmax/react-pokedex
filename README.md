@@ -14,6 +14,6 @@ If you want to test it locally:
 
 3. Open your console and navigate in the root folder of the project (where the public and src folders are located).
 
-4. Type "npm install" and let the console download all neccessary packages.
+4. Type "npm install" and let the console download all necessary packages.
 
 5. Type "npm start" and the project will automaticly launch a web page on your localhost (by default at this url: [http://localhost:3000/](http://localhost:3000/)
