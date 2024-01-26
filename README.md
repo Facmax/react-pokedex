@@ -16,4 +16,4 @@ If you want to test it locally:
 
 4. Type "npm install" and let the console download all necessary packages.
 
-5. Type 'npm start', and the project will automatically launch a web page on your localhost (by default at this URL: [http://localhost:3000/](http://localhost:3000/)
+5. Type 'npm start', and the project will automatically launch a web page on your localhost. (by default at this URL: [http://localhost:3000/](http://localhost:3000/)
