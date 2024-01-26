@@ -8,7 +8,7 @@ This project was created using [Reactjs](https://react.dev/) and the [PokéAPI](
 
 If you want to test it locally:
 
-1. Download the project using the green buton=>'Download zip' or by typing "git clone https://github.com/Facmax/react-pokedex.git" in your console.
+1. Download the project using the green buton=>'Download zip' or by typing "git clone `https://github.com/Facmax/react-pokedex.git`" in your console.
 
 2. If you downloaded as a zip file, extract it.
 
