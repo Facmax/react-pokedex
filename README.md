@@ -1,10 +1,10 @@
 # Getting Started with Create React App
 
-Live demo [here]: (https://facmax.github.io/react-pokedex/).
+Live demo [here](https://facmax.github.io/react-pokedex/).
 
-## Available Scripts
+## Description
 
-In the project directory, you can run:
+This project was created using Reactjs and the [PokéAPI](https://pokeapi.co/)
 
 ### `npm start`
 
