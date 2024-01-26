@@ -25,7 +25,6 @@ function Main() {
   },[search]);
 
   const searchPokemon = () => {
-    console.log(search)
     const filter = fullListPokemons.filter((item) => { 
       return search.toLowerCase() === ""
       ? item

@@ -45,7 +45,7 @@ export const selectTypePokemon = async(e, setStatus, setPokemons, fullListPokemo
     }else setPokemons(fullListPokemons);
 }
 
-export const ClickModal = async (setStatusModal, item, setPokemonModal, setOpenModal, setFlavorText) => {
+export const ClickModal = async (setStatusModal, item, setPokemonModal, setOpenModal, setFlavorText, setEvolution) => {
 
   try{
     setOpenModal(true); 
@@ -58,7 +58,13 @@ export const ClickModal = async (setStatusModal, item, setPokemonModal, setOpenM
         if(response2.ok){
           const data2 = await response2.json()
           setFlavorText(data2)
-          setStatusModal(FETCH_STATUS.SUCCESS);
+          const response3 = await fetch(data2.evolution_chain.url);
+          if(response3.ok){
+            const data3 = await response3.json();
+            setEvolution(data3);
+            setStatusModal(FETCH_STATUS.SUCCESS);
+          }
+          
         }
       setPokemonModal(data);
     }
@@ -67,24 +73,3 @@ export const ClickModal = async (setStatusModal, item, setPokemonModal, setOpenM
     setStatusModal(FETCH_STATUS.ERROR);
   }
 }
-
-export const fetchEvolution = async (url, setEvolution, evolution, setStatusEvolution) => {
-
-  if(evolution === null){
-    try{
-      setStatusEvolution(FETCH_STATUS.LOADING);
-      const response = await fetch(url);
-  
-      if(response.ok){
-        const data = await response.json(); 
-        const response2 = await fetch(data.evolution_chain.url);
-        if(response2.ok){
-          const data2 = await response2.json();
-          setEvolution(data2);
-          setStatusEvolution(FETCH_STATUS.SUCCESS);
-        }
-      }
-    }catch(err){
-      console.log(err);
-      setStatusEvolution(FETCH_STATUS.ERROR);
-    }}}

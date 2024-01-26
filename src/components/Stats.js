@@ -23,7 +23,6 @@ function Stats({}) {
       }
     }
   }
-  
   return (
     <>
       <div className={styles.statsBox}>

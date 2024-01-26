@@ -20,7 +20,7 @@ function Header() {
     return (
       <>
         <header className="vertical_align">
-          <div className={styles.title}>
+          <div>
             <h1>Pokedex - ReactJS</h1>
           </div>
           <div className={styles.contactDesktop}>

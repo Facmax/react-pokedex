@@ -6,9 +6,8 @@ import Loading from './Loading'
 import styles from '../style/evolution.module.scss';
 
 function Evolution({evolution, status}) {
-
+  console.log(evolution)
   const {getPokemonID, addHashTag, capitalizeLetter} = useContext(MyContext);
-
   if(status === "success"){
     let firstEvolution = false;
     let secondEvolution = false;
@@ -18,23 +17,24 @@ function Evolution({evolution, status}) {
     let id_2 = null;
     let id_3 = null;
 
-    if(parseInt(id_1) < 152) {
       firstEvolution = true;
-    }
+ 
 
     let a = evolution.chain.evolves_to.length;
     if(a !== 0){
+      console.log("1")
       id_2 = getPokemonID(evolution.chain.evolves_to[0].species.url);
-      if(parseInt(id_2) < 152){
+
         secondEvolution = true;
-      }
+  
 
     let b = evolution.chain.evolves_to[0].evolves_to.length;
       if(b !== 0){
+        console.log("2")
         id_3 = getPokemonID(evolution.chain.evolves_to[0].evolves_to[0].species.url);
-        if(parseInt(id_3) < 152){
+
           thirdEvolution = true
-        }
+
       }
     }
 
@@ -47,6 +47,7 @@ function Evolution({evolution, status}) {
               <div>
                 <p className={styles.evolutionId}>{addHashTag(evolution.chain.species.url)}</p>
                 <p className={styles.evolutionName}>{capitalizeLetter(evolution.chain.species.name)}</p>
+                {id_1 > 151 ? <p className={styles.evolutionOtherGen}>Pokemon unavailable in 1st generation</p> : ""}
               </div>
             </div> 
             : 
@@ -58,6 +59,7 @@ function Evolution({evolution, status}) {
               <div>
                 <p className={styles.evolutionId}>{addHashTag(evolution.chain.evolves_to[0].species.url)}</p>
                 <p className={styles.evolutionName}>{capitalizeLetter(evolution.chain.evolves_to[0].species.name)}</p>
+                {id_2 > 151 ? <p className={styles.evolutionOtherGen}>Pokemon unavailable in 1st generation</p> : ""}
               </div>
             </div>  
             : 
@@ -69,6 +71,7 @@ function Evolution({evolution, status}) {
               <div>
                 <p className={styles.evolutionId}>{addHashTag(evolution.chain.evolves_to[0].evolves_to[0].species.url)}</p>
                 <p className={styles.evolutionName}>{capitalizeLetter(evolution.chain.evolves_to[0].evolves_to[0].species.name)}</p>
+                {id_3 > 151 ? <p className={styles.evolutionOtherGen}>Pokemon unavailable in 1st generation</p> : ""}
               </div>
             </div> 
             : 
