@@ -1,6 +1,6 @@
 # Getting Started with Create React App
 
-Live demo here: (https://facmax.github.io/react-pokedex/).
+Live demo [here]: (https://facmax.github.io/react-pokedex/).
 
 ## Available Scripts
 
