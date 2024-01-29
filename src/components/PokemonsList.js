@@ -11,16 +11,15 @@ import styles from '../style/pokemonsList.module.scss';
 
 function PokemonsList({pokemons}) {
 
-    const {setPokemonModal, setFlavorText, getPokemonID, addHashTag, capitalizeLetter} = useContext(MyContext);
+    const {setPokemonModal, setFlavorText, getPokemonID, addHashTag, capitalizeLetter, setEvolution} = useContext(MyContext);
     const [statusModal, setStatusModal] = useState(FETCH_STATUS.IDLE)
     const [openModal, setOpenModal] = useState(false);
-    const [evolution, setEvolution] = useState(null);
 
     openModal?document.body.style.overflow="hidden" : document.body.style.overflow=""
 
     return (
         <>
-            {openModal ? <Modal openModal={setOpenModal} statusModal={statusModal} evolution={evolution}/> : ""}
+            {openModal ? <Modal openModal={setOpenModal} statusModal={statusModal}/> : ""}
             {pokemons.map((item) => (
                 <div className={styles.card} key={getPokemonID(item.url)} onClick={()=>ClickModal(setStatusModal, item, setPokemonModal, setOpenModal, setFlavorText, setEvolution)}>
                     <div className={styles.img_background}>

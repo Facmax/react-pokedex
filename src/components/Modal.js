@@ -12,9 +12,9 @@ import pokeball_background from '../img/pokeball_background.png';
 import styles from '../style/modal.module.scss';
 import '../style/modalColor.scss';
 
-function Modal({openModal, statusModal, evolution}) {
+function Modal({openModal, statusModal}) {
 
-  const {pokemonModal, setPokemonModal, capitalizeLetter, addHashTag} = useContext(MyContext);
+  const {pokemonModal, setPokemonModal, capitalizeLetter, addHashTag, evolution} = useContext(MyContext);
   const [valueTabs, setValueTabs] = useState(0);
 
   const [statusEvolution, setStatusEvolution] = useState(FETCH_STATUS.IDLE);
@@ -85,7 +85,7 @@ function Modal({openModal, statusModal, evolution}) {
               <div className={styles.cardInfosPartDataFlex}>
                 <div className={styles.cardInfosPartData}>
                   {valueTabs === 0 ? <Stats/> : ''}
-                  {valueTabs === 1 ? <Evolution evolution={evolution} status={statusModal} /> : ''} 
+                  {valueTabs === 1 ? <Evolution status={statusModal} /> : ''} 
                 </div>
               </div>
 

@@ -5,6 +5,7 @@ const MyContext = createContext();
 const MyContextProvider = ({ children }) => {
     const [pokemonModal, setPokemonModal] = useState(null);
     const [flavorText, setFlavorText] = useState(null);
+    const [evolution, setEvolution] = useState(null)
 
     const getPokemonID = (url) => {
       const pokemonID = url.split("/")[6];
@@ -32,6 +33,8 @@ const MyContextProvider = ({ children }) => {
     setPokemonModal,
     flavorText,
     setFlavorText,
+    evolution,
+    setEvolution,
     getPokemonID,
     addHashTag,
     capitalizeLetter
