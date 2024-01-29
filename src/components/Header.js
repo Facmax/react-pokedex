@@ -30,7 +30,9 @@ function Header() {
               </a>
             </div>
             <div className={`${styles.contactCircle} vertical_align`}>
-              <img src={linkedIn} alt="linked icon" />
+              <a href="https://www.linkedin.com/in/maxime-vigneron-28447119b/" target="_blank" rel="noreferrer">
+                <img src={linkedIn} alt="linked icon" />
+              </a>
             </div>
           </div>
           <div className={styles.contactMobile} onClick={() =>handleClick()}>
